@@ -1,9 +1,8 @@
 // pages/api/polls.js
 
 export default function handler(req, res) {
-  // Check if the request is a GET request
+  // Handle GET requests
   if (req.method === 'GET') {
-    // Return the data as JSON
     res.status(200).json({
       meta: [
         { property: "fc:frame", content: "vNext" },
@@ -14,26 +13,19 @@ export default function handler(req, res) {
         { property: "fc:frame:button:4", content: "Blue" }
       ]
     });
-  } else {
-    // Handle any non-GET requests
-    res.setHeader('Allow', ['GET']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
   }
-
-
-
-
-  if (req.method === 'POST') {
-    // Return the data as JSON
+  // Handle POST requests
+  else if (req.method === 'POST') {
     res.status(200).json({
       meta: [
         { property: "fc:frame", content: "vNext" },
-        { property: "fc:frame:image", content: "result.png" },
+        { property: "fc:frame:image", content: "result.png" }
       ]
     });
-  } else {
-    // Handle any non-POST request
-    res.setHeader('Allow', ['POSt']);
+  }
+  // Handle any other methods
+  else {
+    res.setHeader('Allow', ['GET', 'POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
