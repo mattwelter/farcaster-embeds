@@ -14,6 +14,9 @@ export default function Home() {
         <meta property="fc:frame:button:1" content="Red" />
         <meta property="fc:frame:button:2" content="Blue" />
         <meta property="fc:frame:post_url" content="https://farcaster-embeds.vercel.app/api/polls" />
+
+        <meta property="og:title" content="TEST" />
+        <meta property="og:image" content="https://farcaster-embeds.vercel.app/start.png" />
       </Head>
     </main>
   );
