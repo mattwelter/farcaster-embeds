@@ -1,7 +1,21 @@
-// pages/api/polls.js
-
 export default function handler(req, res) {
-   if (req.method === 'POST') {
+  if (req.method === 'GET') {
+    res.setHeader('Content-Type', 'text/html');
+    const htmlContent = `
+      <head>
+        <meta property="fc:frame" content="vNext" />
+        <meta property="fc:frame:image" content="https://farcaster-embeds.vercel.app/start.png" />
+        <meta property="fc:frame:button:1" content="Red" />
+        <meta property="fc:frame:button:2" content="Blue" />
+        <meta property="fc:frame:post_url" content="https://farcaster-embeds.vercel.app/api/polls" />
+      </head>
+    `;
+
+    res.status(200).send(htmlContent);
+  }
+  
+  
+  else if (req.method === 'POST') {
     res.setHeader('Content-Type', 'text/html');
 
     // Create a string of HTML content

@@ -10,11 +10,10 @@ export default function Home() {
     <main>
       <Head>
         <meta property="fc:frame" content="vNext" />
-        <meta property="fc:frame:image" content="/start.png" />
+        <meta property="fc:frame:image" content="https://farcaster-embeds.vercel.app/start.png" />
         <meta property="fc:frame:button:1" content="Red" />
         <meta property="fc:frame:button:2" content="Blue" />
-        <meta property="fc:frame:post_url" content="/api/polls" />
-        <title>Your Page Title</title>
+        <meta property="fc:frame:post_url" content="https://farcaster-embeds.vercel.app/api/polls" />
       </Head>
     </main>
   );
