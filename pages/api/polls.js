@@ -10,10 +10,9 @@ export default function handler(req, res) {
     const htmlContent = `
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="https://farcaster-embeds.vercel.app/start.png" />
-      <meta property="fc:frame:button:1" content="Green" />
-      <meta property="fc:frame:button:2" content="Purple" />
-      <meta property="fc:frame:button:3" content="Red" />
-      <meta property="fc:frame:button:4" content="Blue" />
+      <meta property="fc:frame:button:1" content="Red" />
+      <meta property="fc:frame:button:2" content="Blue" />
+      <meta property="fc:frame:post_url" content="https://farcaster-embeds.vercel.app/api/polls" />
     `;
 
     // Send the HTML content
