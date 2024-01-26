@@ -32,7 +32,7 @@ export default function handler(req, res) {
       ]
     });
   } else {
-    // Handle any non-POST requests
+    // Handle any non-POST request
     res.setHeader('Allow', ['POSt']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
