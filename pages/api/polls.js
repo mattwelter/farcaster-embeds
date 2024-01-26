@@ -7,7 +7,7 @@ export default function handler(req, res) {
     res.status(200).json({
       meta: [
         { property: "fc:frame", content: "vNext" },
-        { property: "fc:frame:image", content: "http://...image-question.png" },
+        { property: "fc:frame:image", content: "start.png" },
         { property: "fc:frame:button:1", content: "Green" },
         { property: "fc:frame:button:2", content: "Purple" },
         { property: "fc:frame:button:3", content: "Red" },
@@ -28,7 +28,7 @@ export default function handler(req, res) {
     res.status(200).json({
       meta: [
         { property: "fc:frame", content: "vNext" },
-        { property: "fc:frame:image", content: "http://...image-result.png" },
+        { property: "fc:frame:image", content: "result.png" },
       ]
     });
   } else {
