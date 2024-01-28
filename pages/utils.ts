@@ -1,4 +1,4 @@
-export default function generateFarcasterFrame(image: string, choice: number) {
+export default function generateFarcasterFrame(image: string, choice: number, fid: string) {
   return `
     <!DOCTYPE html>
     <html lang="en">
@@ -6,12 +6,7 @@ export default function generateFarcasterFrame(image: string, choice: number) {
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="${image}" />
       <meta property="fc:frame:post_url" content="https://farcaster-embeds.vercel.app/api/post" />
-
-      ${
-        choice === 2
-          ? '<meta property="fc:frame:button:1" content="Yes" />'
-          : ''
-      }
+      <Followers fid=${fid}/>
     </head>
     <body>
       

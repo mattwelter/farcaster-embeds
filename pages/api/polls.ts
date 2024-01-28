@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { CreateImage } from '../image'
 
 import generateFarcasterFrame from '../utils'
 
@@ -27,13 +28,15 @@ export default async function handler(
   }
 
   const choice = signedMessage.untrustedData.buttonIndex
+  const image = await CreateImage(signedMessage.untrustedData.fid)
 
   let html: string = ''
 
+
   if (choice === 1) {
-    html = generateFarcasterFrame(`https://farcaster-embeds.vercel.app/result.png`, choice)
+    html = generateFarcasterFrame(image, choice, `${signedMessage.untrustedData.fid}`)
   } else {
-    html = generateFarcasterFrame(`https://farcaster-embeds.vercel.app/result.png`, choice)
+    html = generateFarcasterFrame(image, choice, `${signedMessage.untrustedData.fid}`)
   }
 
   return res.status(200).setHeader('Content-Type', 'text/html').send(html)
