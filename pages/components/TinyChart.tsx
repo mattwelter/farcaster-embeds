@@ -1,23 +1,18 @@
-import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { LineChart, Line } from 'recharts';
 
-export default async function App(fid: any) {
+// Define the props interface
+interface TinyChartProps {
+  fid: number[];
+}
 
-    const rawData = fid.fid
-    const data = []
+// Use the interface for your component's props
+export default function TinyChart({ fid }: TinyChartProps) {
+  const data = fid
 
-    for (let i=0; i<rawData.length; i++) {
-        data.push({
-            followers: parseInt(fid.fid[i] as string),
-        })
-      }
-
-    console.log(data)
-
-    return (
-            <LineChart width={250} height={50} data={data}>
-                <Line type="monotone" dataKey="followers" stroke="#8884d8" strokeWidth={1} dot={false}/>
-            </LineChart>
-    );
-  }
-  
+  return (
+    <LineChart width={250} height={50} data={data}>
+      <Line type="monotone" dataKey="followers" stroke="#8884d8" strokeWidth={1} dot={false} />
+    </LineChart>
+  );
+}
