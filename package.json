@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dgram": "^1.0.1",
     "dns": "^0.2.2",
     "fs": "^0.0.1-security",
     "net": "^1.0.2",
