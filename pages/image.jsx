@@ -1,6 +1,6 @@
 import satori from 'satori';
 
-export async function CreateImage(content) {
+export default async function CreateImage(content) {
   return await satori(
     <div style={{ color: 'black' }}>{content}</div>,
     {

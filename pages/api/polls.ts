@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { CreateImage } from '../image'
+import CreateImage from '../image'
 
 import generateFarcasterFrame from '../utils'
 
