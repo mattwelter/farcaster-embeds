@@ -8,19 +8,8 @@ export default function CreateImage(content) {
     const generateImage = async () => {
       const img = await satori(
         <div style={{ color: 'black' }}>{content}</div>,
-        {
-          width: 600,
-          height: 400,
-          fonts: [
-            {
-              name: 'Roboto',
-              data: robotoArrayBuffer, // Ensure robotoArrayBuffer is defined
-              weight: 400,
-              style: 'normal',
-            },
-          ],
-        },
       );
+      console.log({img})
       setImage(img);
     };
 

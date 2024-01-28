@@ -31,13 +31,8 @@ export default async function handler(
   const image = await CreateImage(signedMessage.untrustedData.fid)
 
   let html: string = ''
+  html = generateFarcasterFrame(image)
 
-
-  if (choice === 1) {
-    html = generateFarcasterFrame(image, choice, `${signedMessage.untrustedData.fid}`)
-  } else {
-    html = generateFarcasterFrame(image, choice, `${signedMessage.untrustedData.fid}`)
-  }
 
   return res.status(200).setHeader('Content-Type', 'text/html').send(html)
 }
