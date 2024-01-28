@@ -1,14 +1,11 @@
-export const BASE_URL = "https://farcaster-embeds.vercel.app"
-
-// generate an html page with the relevant opengraph tags
-export function generateFarcasterFrame(image: string, choice: number) {
+export default function generateFarcasterFrame(image: string, choice: number) {
   return `
     <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta property="fc:frame" content="vNext" />
       <meta property="fc:frame:image" content="${image}" />
-      <meta property="fc:frame:post_url" content="${BASE_URL}/api/post" />
+      <meta property="fc:frame:post_url" content="https://farcaster-embeds.vercel.app/api/post" />
 
       ${
         choice === 2

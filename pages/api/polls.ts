@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { BASE_URL, generateFarcasterFrame } from '../utils'
+import generateFarcasterFrame from '../utils'
 
 export default async function handler(
   req: NextApiRequest,
@@ -31,9 +31,9 @@ export default async function handler(
   let html: string = ''
 
   if (choice === 1) {
-    html = generateFarcasterFrame(`${BASE_URL}/result.png`, choice)
+    html = generateFarcasterFrame(`https://farcaster-embeds.vercel.app/result.png`, choice)
   } else {
-    html = generateFarcasterFrame(`${BASE_URL}/result.png`, choice)
+    html = generateFarcasterFrame(`https://farcaster-embeds.vercel.app/result.png`, choice)
   }
 
   return res.status(200).setHeader('Content-Type', 'text/html').send(html)
