@@ -19,7 +19,7 @@ export default function HomeFeed({ fid }: FollowersProps) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/api/fetchData', {
+      const response = await fetch('/api/getFollowers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

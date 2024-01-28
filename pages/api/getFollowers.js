@@ -1,5 +1,5 @@
 // pages/api/fetchData.js
-import db from '../../api/db'; // Adjust the path as necessary
+import db from './db'; // Adjust the path as necessary
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
