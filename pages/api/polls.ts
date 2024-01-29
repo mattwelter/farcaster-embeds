@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import CreateImage from '../components/image'
 
 import generateFarcasterFrame from '../utils'
 
@@ -27,12 +26,9 @@ export default async function handler(
     }
   }
 
-  const choice = signedMessage.untrustedData.buttonIndex
-  const image = await CreateImage(signedMessage.untrustedData.fid)
-
-  let html: string = ''
-  html = generateFarcasterFrame(image)
-
+  const html = generateFarcasterFrame(
+    `https://farcaster-embeds.vercel.app/api/image/${signedMessage.untrustedData.fid}`
+  )
 
   return res.status(200).setHeader('Content-Type', 'text/html').send(html)
 }
